@@ -4,6 +4,22 @@ import axios from "axios";
 import {URL,api_key} from "./contents/index"
 import Title from './title';
 import Explanation from "./components/explination";
+import styled from 'styled-components'
+
+const SkyImg =styled.img`
+height: 50vh;
+width: 50vw;
+border-radius: 20px;
+
+`;
+const Containers =styled.div`
+background-color: lightblue;
+box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  border-radius: 8px;
+  margin: 16px;
+  padding: 16px 8px 12px 16px;
+
+`;
 
 function App() {
 const date  = Date();
@@ -34,11 +50,11 @@ const date  = Date();
 
   return (
     
-    <div className="App">
+    <Containers className="App">
       
       <Title title={title} />
   
-      <img src={'https://apod.nasa.gov/apod/image/2108/Mammatus_Johnston_960.jpg'} />
+      <SkyImg src={'https://apod.nasa.gov/apod/image/2108/Mammatus_Johnston_960.jpg'} />
       <Explanation paragraph={paragraph}/>
       {/* <p >
         Read through the instructions in the README.md file to build your NASA
@@ -48,7 +64,7 @@ const date  = Date();
       <h4>{date}</h4>
       <h4>{copyright}</h4>
       </div>
-    </div>
+    </Containers>
   );
 }
 
